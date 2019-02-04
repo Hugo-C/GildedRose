@@ -3,7 +3,6 @@ public enum ItemEnum {
     AgedBrie,
     ElixirMongoose,
     Sulfuras,
-    HandofRagnaros,
     Backstage,
     ConjuredManaCake
 }

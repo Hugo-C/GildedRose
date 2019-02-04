@@ -9,6 +9,20 @@ public class Item {
 		this.setSellIn(sellIn);
 		this.setQuality(quality);
 	}
+
+	public void updateQuality(){
+		int quality = getQuality();
+		if(getSellIn() > 0){
+			quality -= 1;
+		} else {
+			quality -= 2;
+		}
+
+		if(quality < 0)
+			quality = 0;
+		setQuality(quality);
+		setSellIn(getSellIn() - 1);
+	}
     
 	/* Generated getter and setter code */
     public String getName() {
