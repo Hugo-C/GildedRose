@@ -17,8 +17,9 @@ public class GildedRoseTest {
 	@Test
 	public void testSellIn() {
 		int sellIn = 10;
-		Item item = new Item("+5 Dexterity Vest", sellIn, 20);
-		gildedRose.items.add(item);
+		Item item = gildedRose.getItem(ItemEnum.DexterityVest);
+		item.sellIn = sellIn;
+		item.quality = 20;
 
 		gildedRose.updateQuality();
 
@@ -28,8 +29,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityWithSellInPositive() {
 		int quality = 10;
-		Item item = new Item("+5 Dexterity Vest", 10, quality);
-		gildedRose.items.add(item);
+        Item item = gildedRose.getItem(ItemEnum.DexterityVest);
+        item.sellIn = 10;
+        item.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -39,8 +41,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityWithSellInNegative() {
 		int quality = 10;
-		Item item = new Item("+5 Dexterity Vest", -10, quality);
-		gildedRose.items.add(item);
+        Item item = gildedRose.getItem(ItemEnum.DexterityVest);
+        item.sellIn = -10;
+        item.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -50,8 +53,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityIsPositive() {
 		int quality = 0;
-		Item item = new Item("+5 Dexterity Vest", -10, quality);
-		gildedRose.items.add(item);
+        Item item = gildedRose.getItem(ItemEnum.DexterityVest);
+        item.sellIn = -10;
+        item.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -61,8 +65,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityAgedBrieWithSellInPositive() {
 		int quality = 5;
-		Item agedBrie = new Item("Aged Brie", 2, quality);
-		gildedRose.items.add(agedBrie);
+        Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
+        agedBrie.sellIn = 2;
+        agedBrie.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -72,8 +77,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityAgedBrieWithSellInNegative() {
 		int quality = 5;
-		Item agedBrie = new Item("Aged Brie", -2, quality);
-		gildedRose.items.add(agedBrie);
+        Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
+        agedBrie.sellIn = -2;
+        agedBrie.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -83,8 +89,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityIsUnder51WithSellInPositive() {
 		int quality = 50;
-		Item agedBrie = new Item("Aged Brie", 10, quality);
-		gildedRose.items.add(agedBrie);
+        Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
+        agedBrie.sellIn = 10;
+        agedBrie.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -94,8 +101,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityIsUnder51WithSellInNegative() {
 		int quality = 49;
-		Item agedBrie = new Item("Aged Brie", -5, quality);
-		gildedRose.items.add(agedBrie);
+        Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
+        agedBrie.sellIn = -5;
+        agedBrie.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -105,8 +113,9 @@ public class GildedRoseTest {
 	@Test
 	public void testSellinAndQualitySulfuras() {
 		int quality = 80;
-		Item sulfuras =	new Item("Sulfuras, Hand of Ragnaros", 0, quality);
-		gildedRose.items.add(sulfuras);
+        Item sulfuras = gildedRose.getItem(ItemEnum.Sulfuras);
+        sulfuras.sellIn = 0;
+        sulfuras.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -117,8 +126,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityBackstageWithSellInOver10() {
 		int quality = 10;
-		Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 15, quality);
-		gildedRose.items.add(backstage);
+        Item backstage = gildedRose.getItem(ItemEnum.Backstage);
+        backstage.sellIn = 15;
+        backstage.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -128,8 +138,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityBackstageWithSellInBetween10and5Excluded() {
 		int quality = 10;
-		Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 6, quality);
-		gildedRose.items.add(backstage);
+        Item backstage = gildedRose.getItem(ItemEnum.Backstage);
+        backstage.sellIn = 6;
+        backstage.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -139,8 +150,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityBackstageWithSellInBetween5and0Excluded() {
 		int quality = 10;
-		Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 2, quality);
-		gildedRose.items.add(backstage);
+        Item backstage = gildedRose.getItem(ItemEnum.Backstage);
+        backstage.sellIn = 2;
+        backstage.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -150,8 +162,9 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityBackstageWithSellInNegativeOrZero() {
 		int quality = 10;
-		Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", -10, quality);
-		gildedRose.items.add(backstage);
+        Item backstage = gildedRose.getItem(ItemEnum.Backstage);
+        backstage.sellIn = -10;
+        backstage.quality = quality;
 
 		gildedRose.updateQuality();
 
@@ -161,11 +174,12 @@ public class GildedRoseTest {
 	@Test
 	public void testQualityConjured() {  // TODO check conjured doesn't drop under 0 quality
 		int quality = 10;
-		Item backstage = new Item("Conjured Mana Cake", 3, quality);
-		gildedRose.items.add(backstage);
+        Item conjured = gildedRose.getItem(ItemEnum.ConjuredManaCake);
+        conjured.sellIn = 3;
+        conjured.quality = quality;
 
 		gildedRose.updateQuality();
 
-		assertEquals(backstage.quality, quality - 2);
+		assertEquals(conjured.quality, quality - 2);
 	}
 }
