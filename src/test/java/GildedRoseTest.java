@@ -15,7 +15,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testSellIn() {
+    public void item_should_have_a_sellIn_decreasing() {
         int sellIn = 10;
         Item item = gildedRose.getItem(ItemEnum.DexterityVest);
         item.sellIn = sellIn;
@@ -27,7 +27,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityWithSellInPositive() {
+    public void item_should_have_a_quality_decreasing_when_sellin_is_positive() {
         int quality = 10;
         Item item = gildedRose.getItem(ItemEnum.DexterityVest);
         item.sellIn = 10;
@@ -39,7 +39,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityWithSellInNegative() {
+    public void item_should_have_a_quality_decreasing_faster_when_sellin_is_negative() {
         int quality = 10;
         Item item = gildedRose.getItem(ItemEnum.DexterityVest);
         item.sellIn = -10;
@@ -51,7 +51,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityIsPositive() {
+    public void item_should_have_a_quality_always_positive() {
         int quality = 0;
         Item item = gildedRose.getItem(ItemEnum.DexterityVest);
         item.sellIn = -10;
@@ -63,7 +63,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityAgedBrieWithSellInPositive() {
+    public void agedBrie_should_have_a_quality_increasing_by_1_with_sellin_positive() {
         int quality = 5;
         Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
         agedBrie.sellIn = 2;
@@ -75,7 +75,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityAgedBrieWithSellInNegative() {
+    public void agedBrie_should_have_a_quality_increasing_by_2_with_sellin_negative() {
         int quality = 5;
         Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
         agedBrie.sellIn = -2;
@@ -87,7 +87,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityIsUnder51WithSellInPositive() {
+    public void agedBrie_should_have_a_quality_max_of_50_with_sellIn_positive() {
         int quality = 50;
         Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
         agedBrie.sellIn = 10;
@@ -99,7 +99,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityIsUnder51WithSellInNegative() {
+    public void agedBrie_should_have_a_quality_max_of_50_with_sellIn_negative() {
         int quality = 49;
         Item agedBrie = gildedRose.getItem(ItemEnum.AgedBrie);
         agedBrie.sellIn = -5;
@@ -111,7 +111,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testSellinAndQualitySulfuras() {
+    public void sulfuras_should_have_a_quality_and_sellin_fixed() {
         int quality = 80;
         Item sulfuras = gildedRose.getItem(ItemEnum.Sulfuras);
         sulfuras.sellIn = 0;
@@ -124,7 +124,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityBackstageWithSellInOver10() {
+    public void backstage_should_have_a_quality_increasing_by_1_with_sellin_over_10() {
         int quality = 10;
         Item backstage = gildedRose.getItem(ItemEnum.Backstage);
         backstage.sellIn = 15;
@@ -136,7 +136,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityBackstageWithSellInBetween10and5Excluded() {
+    public void backstage_should_have_a_quality_increasing_by_2_with_sellin_between_10_and_5_excluded() {
         int quality = 10;
         Item backstage = gildedRose.getItem(ItemEnum.Backstage);
         backstage.sellIn = 6;
@@ -148,7 +148,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityBackstageWithSellInBetween5and0Excluded() {
+    public void backstage_should_have_a_quality_increasing_by_2_with_sellin_between_5_and_0_excluded() {
         int quality = 10;
         Item backstage = gildedRose.getItem(ItemEnum.Backstage);
         backstage.sellIn = 2;
@@ -160,7 +160,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityBackstageWithSellInNegativeOrZero() {
+    public void backstage_should_have_a_quality_of_0_with_sellin_0_or_negative() {
         int quality = 10;
         Item backstage = gildedRose.getItem(ItemEnum.Backstage);
         backstage.sellIn = -10;
@@ -172,7 +172,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testQualityConjured() {
+    public void conjured_should_have_a_quality_decreasing_by_2_with_selling_positive() {
         int quality = 10;
         Item conjured = gildedRose.getItem(ItemEnum.ConjuredManaCake);
         conjured.sellIn = 3;
@@ -183,7 +183,7 @@ public class GildedRoseTest {
         assertEquals(conjured.quality, quality - 2);
     }
     @Test
-    public void testQualityIsPositiveConjured() {
+    public void conjured_should_have_a_quality_positive() {
         int quality = 0;
         Item conjured = gildedRose.getItem(ItemEnum.ConjuredManaCake);
         conjured.sellIn = 3;
