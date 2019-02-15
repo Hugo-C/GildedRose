@@ -5,5 +5,6 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    public void updateQuality() {}
+    public void updateQuality() {
+    }
 }

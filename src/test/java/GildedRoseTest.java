@@ -182,6 +182,7 @@ public class GildedRoseTest {
 
         assertEquals(conjured.quality, quality - 2);
     }
+
     @Test
     public void conjured_should_have_a_quality_positive() {
         int quality = 0;
