@@ -28,7 +28,7 @@ public class GildedRose {
     }
 
     public static void main(String[] args) {
-        GildedRose gildedRose = new GildedRose();
+        var gildedRose = new GildedRose();
         gildedRose.updateQuality();
     }
 }

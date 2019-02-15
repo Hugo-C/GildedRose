@@ -1,3 +1,5 @@
+import static java.lang.Math.min;
+
 public class Backstage extends Item {
     public Backstage(int sellIn, int quality) {
         super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
@@ -18,10 +20,7 @@ public class Backstage extends Item {
             quality += 1;
         }
 
-        if(quality > 50){
-            quality = 50;
-        }
-        setQuality(quality);
+        setQuality(min(50, quality));
         setSellIn(sellIn - 1);
     }
 }

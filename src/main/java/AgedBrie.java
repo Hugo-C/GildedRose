@@ -1,3 +1,5 @@
+import static java.lang.Math.min;
+
 public class AgedBrie extends Item {
     public AgedBrie(int sellIn, int quality) {
         super("Aged Brie", sellIn, quality);
@@ -11,10 +13,8 @@ public class AgedBrie extends Item {
         } else {
             quality += 1;
         }
-        if(quality > 50){
-            quality = 50;
-        }
-        setQuality(quality);
+
+        setQuality(min(50, quality));
         setSellIn(getSellIn() - 1);
     }
 }

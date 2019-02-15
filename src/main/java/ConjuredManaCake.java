@@ -1,3 +1,5 @@
+import static java.lang.Math.max;
+
 public class ConjuredManaCake extends Item {
     public ConjuredManaCake(int sellIn, int quality) {
         super("Conjured Mana Cake", sellIn, quality);
@@ -12,9 +14,7 @@ public class ConjuredManaCake extends Item {
             quality -= 4;
         }
 
-        if(quality < 0)
-            quality = 0;
-        setQuality(quality);
+        setQuality(max(quality, 0));
         setSellIn(getSellIn() - 1);
     }
 }

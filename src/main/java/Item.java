@@ -1,3 +1,4 @@
+import static java.lang.Math.max;
 
 public class Item {
     public String name;
@@ -18,9 +19,7 @@ public class Item {
 			quality -= 2;
 		}
 
-		if(quality < 0)
-			quality = 0;
-		setQuality(quality);
+		setQuality(max(quality, 0));
 		setSellIn(getSellIn() - 1);
 	}
     
